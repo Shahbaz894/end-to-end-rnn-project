@@ -18,6 +18,7 @@ def decoded_review(encoded_review):
 
 def preprocess_text(text):
     words=text.lower().split()
+    # getting words
     encoded_review=[word_index.get(word,2) + 3 for word in words]
     
     padded_review = sequence.pad_sequences([encoded_review], maxlen=500)
