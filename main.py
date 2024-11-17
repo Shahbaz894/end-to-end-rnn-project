@@ -8,7 +8,11 @@ word_index=imdb.get_word_index()
 reverse_word_index={value:key for key , value in word_index.items()}
 
 
-model=load_model('simple_rnn_imdb.h5')
+try:
+    model = load_model('simple_rnn_imdb.h5')
+    print(model.summary())
+except Exception as e:
+    print(f"Error: {e}")
 
 # Step 2: Helper Functions
 # Function to decode reviews
